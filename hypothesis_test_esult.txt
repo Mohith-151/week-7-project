@@ -1,0 +1,37 @@
+==========================================================
+HYPOTHESIS TESTING REPORT: SALES & MARKETING ANALYSIS
+==========================================================
+
+TEST 1: NORMALITY TEST (SHAPIRO-WILK)
+----------------------------------------------------------
+- Variable: Daily_Revenue
+- Null Hypothesis (H0): Daily Revenue follows a normal distribution.
+- Alternative Hypothesis (H1): Daily Revenue does not follow a normal distribution.
+- Result: p-value = 0.000 (Significant)
+- Conclusion: Reject H0. The data is non-normal (Bimodal Distribution). 
+- Impact: Non-parametric tests (Mann-Whitney U) will be used for group comparison.
+
+TEST 2: 'PROMO_STRATEGY' COMPARISON (MANN-WHITNEY U)
+----------------------------------------------------------
+- Comparison: Standard Strategy vs. Aggressive_Discount Strategy
+- Null Hypothesis (H0): There is no significant difference in revenue between the two strategies.
+- Alternative Hypothesis (H1): The Aggressive_Discount strategy results in significantly higher revenue.
+- Test Statistic: 0.0 (U-statistic)
+- Result: p-value ≈ 4.98e-33 (approx 0.000000000000000000000000000000000000048)
+- Alpha Level: 0.05
+- Conclusion: Reject H0. The difference is statistically significant.
+- Business Interpretation: The promotion strategy has a massive impact on revenue that cannot be attributed to random chance.
+
+TEST 3: CORRELATION SIGNIFICANCE
+----------------------------------------------------------
+- Variables: Marketing_Spend & Daily_Revenue
+- Method: Spearman Rank Correlation (due to non-normality)
+- Result: ρ~ 0.999
+- Conclusion: 
+    - Strong positive monotonic relationship. 
+    - Increasing marketing spend consistently leads to higher revenue across both strategy groups.
+
+SUMMARY OF FINDINGS
+----------------------------------------------------------
+The analysis confirms with near-absolute statistical certainty that the Aggressive_Discount strategy outperforms the Standard strategy.
+The non-normal distribution of revenue is explained by the distinct performance gap between these two operational modes.
